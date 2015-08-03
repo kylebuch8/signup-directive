@@ -1,16 +1,16 @@
 <div ng-transclude></div>
-<form class="form">
-  <div class="field-wrapper">
-    <label>First Name</label>
-    <input type="text">
-  </div>
-  <div class="field-wrapper">
-    <label>Last Name</label>
-    <input type="text">
-  </div>
-  <div class="field-wrapper">
-    <label>Email</label>
-    <input type="email">
-  </div>
-  <input type="submit">
+<form name="optinForm" class="form" ng-submit="optinForm.$valid && submit()">
+    <div class="field-wrapper">
+        <label>First Name</label>
+        <input type="text" name="firstname" ng-model="user.firstname" required>
+    </div>
+    <div class="field-wrapper">
+        <label>Last Name</label>
+        <input type="text" name="lastname" ng-model="user.lastname" required>
+    </div>
+    <div class="field-wrapper">
+        <label>Email</label>
+        <input type="email" name="email" ng-model="user.email" required>
+    </div>
+    <input type="submit">
 </form>

@@ -24,4 +24,20 @@ describe('optIn', function() {
     it('should render the element correctly', function(){
         expect(element.find('input').length).toBe(4);
     });
+
+    it('should submit a form after passing validation', function () {
+        scope.submit();
+        scope.$digest();
+
+        expect(scope.optinForm.$valid).toBe(false);
+
+        scope.optinForm.firstname.$setViewValue('Kyle');
+        scope.optinForm.lastname.$setViewValue('Buchanan');
+        scope.optinForm.email.$setViewValue('something@gmail.com');
+        scope.$digest();
+        scope.submit();
+
+        expect(scope.optinForm.$valid).toBe(true);
+        expect(scope.submitted).toBe(true);
+    });
 });
