@@ -3,6 +3,6 @@ angular.module('signupApp', [])
     return {
       restrict: 'E',
       transclude: true,
-      templateUrl: '/optin.html'
+      templateUrl: 'optin.html'
     };
   });
